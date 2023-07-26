@@ -1,0 +1,17 @@
+title: appone
+description: this is appone configs
+
+net:
+  ip: 0.0.0.0
+  port: 8080
+  websocket: 8081                                                                                                                                                  
+
+logger: 
+  OUTPUT: logs/out.log
+  LEVEL: debug
+  MAX_SIZE: 100
+  MAX_BACKUPS: 5
+  MAX_AGE: 10
+  COMPRESS: true
+  
+                                                                                                                                                      

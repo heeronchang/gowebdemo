@@ -1,0 +1,17 @@
+title: appone
+description: this is appone configs
+
+net:
+  ip: 0.0.0.0
+  port: 8080
+  websocket: 8081
+  timeout: 30
+
+logger:
+  OUTPUT: logs/out.log # 日志输出路径
+  LEVEL: debug # 日志等级
+  MAX_SIZE: 100 # 单个日志文件 大小上限，单位：MB
+  MAX_BACKUPS: 30 # 最多保留的旧日志个数
+  MAX_AGE: 30 # 保留日志最大天数
+  COMPRESS: true #  是否启用压缩
+

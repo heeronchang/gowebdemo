@@ -1,0 +1,6 @@
+{"level":"info","time":"2023-07-26T11:17:47+08:00","caller":"/home/heeron/workspace/go-web-demo/cmd/app_one/main.go:13","message":"app decs: this is appone configs"}
+{"level":"info","id":"","status":200,"method":"GET","path":"/ping","ip":"127.0.0.1","latency":0.03024,"user_agent":"curl/7.81.0","time":"2023-07-26T11:18:14+08:00","message":"Request"}
+{"level":"warn","id":"","status":404,"method":"GET","path":"/debug","ip":"127.0.0.1","latency":0.012667,"user_agent":"curl/7.81.0","time":"2023-07-26T11:18:39+08:00","message":"Request"}
+{"level":"info","id":"","status":200,"method":"GET","path":"/api/v1/debug","ip":"127.0.0.1","latency":0.051863,"user_agent":"curl/7.81.0","time":"2023-07-26T11:18:48+08:00","message":"Request"}
+{"level":"info","time":"2023-07-26T11:20:40+08:00","caller":"/home/heeron/workspace/go-web-demo/cmd/app_one/main.go:13","message":"app decs: this is appone configs"}
+{"level":"info","id":"dff45761-f002-46c5-b15b-9f4a13843a62","status":200,"method":"GET","path":"/api/v1/debug","ip":"127.0.0.1","latency":0.040446,"user_agent":"curl/7.81.0","time":"2023-07-26T11:20:46+08:00","message":"Request"}
