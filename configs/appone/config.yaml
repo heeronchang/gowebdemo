@@ -7,6 +7,10 @@ net:
   websocket: 8081
   timeout: 30
 
+jwt:
+  secret: fuckuman
+  exp: 60
+
 logger:
   OUTPUT: logs/out.log # 日志输出路径
   LEVEL: debug # 日志等级

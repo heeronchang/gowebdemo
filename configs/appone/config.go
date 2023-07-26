@@ -49,7 +49,6 @@ func init() {
 		log.Println("Config file changed:", in.Name)
 	})
 	AppOneConfig.WatchConfig()
-
 }
 
 // GetTitle 获取标题
@@ -114,4 +113,19 @@ func GetLogger() *LoggerConfig {
 	}
 
 	return lc
+}
+
+type Jwt struct {
+	Secret string
+	Exp    int64
+}
+
+// GetJwt 获取jwt配置信息
+func GetJwt() *Jwt {
+	jwt := &Jwt{
+		Secret: AppOneConfig.GetString("jwt.secret"),
+		Exp:    AppOneConfig.GetInt64("jwt.exp"),
+	}
+
+	return jwt
 }
