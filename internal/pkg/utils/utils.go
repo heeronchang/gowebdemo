@@ -15,9 +15,9 @@ func IsDirectlyRun() bool {
 	// 判断程序是直接运行还是作为二进制包运行
 	if ok := strings.HasPrefix(executableName, "./"); ok {
 		log.Println("作为二进制包运行")
-		return true
+		return false
 	} else {
 		fmt.Println("直接运行")
-		return false
+		return true
 	}
 }
