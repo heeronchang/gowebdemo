@@ -5,11 +5,11 @@ import (
 	"gowebdemo/configs/appone"
 	"gowebdemo/internal/pkg/middleware"
 	"gowebdemo/internal/pkg/utils"
-	"log"
 	"net/http"
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/rs/zerolog/log"
 )
 
 // 启动普通webapi
@@ -31,14 +31,14 @@ func StartWebAPI() {
 		defer cancel()
 
 		if err := srv.Shutdown(ctx); err != nil {
-			log.Printf("Server Shutdown gracefully err: %s\n", err.Error())
+			log.Info().Msgf("Server Shutdown gracefully err: %s\n", err.Error())
 		}
-		log.Printf("Server shutdown.")
+		log.Info().Msgf("Server shutdown.")
 		shutdown <- true
 	})
 
 	if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
-		log.Printf("listen addr: %s err: %s\n", addr, err.Error())
+		log.Info().Msgf("listen addr: %s err: %s\n", addr, err.Error())
 	}
 
 	<-shutdown
@@ -56,7 +56,7 @@ func routers() *gin.Engine {
 	r.MaxMultipartMemory = 8 << 20 // 8 MB
 
 	// 中间件
-	r.Use(middleware.Cors(), middleware.JWTAuth())
+	r.Use(middleware.Cors())
 	r.Use(middleware.RequestID(), middleware.ZeroLog())
 
 	// routers

@@ -2,6 +2,8 @@ package middleware
 
 import (
 	"gowebdemo/configs/appone"
+	"gowebdemo/internal/pkg/jwt"
+	"net/http"
 	"os"
 
 	"github.com/gin-contrib/cors"
@@ -31,6 +33,12 @@ func JWTAuth() gin.HandlerFunc {
 			return
 		}
 		// TODO 验证token
+		claims, err := jwt.VerifyToken(h["token"])
+		if err != nil {
+			ctx.JSON(http.StatusUnauthorized, gin.H{"message": err.Error()})
+			return
+		}
+		log.Debug().Msgf("claims: %v", claims)
 
 		// 如果中间件里读取了request body，需要把body数据复制一份，重新放入ctx
 		// data, err := ctx.GetRawData()
