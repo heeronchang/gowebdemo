@@ -1,6 +1,8 @@
 package gormdb
 
 import (
+	"time"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -16,5 +18,13 @@ func Connect() (db *gorm.DB, err error) {
 		return
 	}
 
+	sqlDB, err := db.DB()
+	if err != nil {
+		return
+	}
+
+	sqlDB.SetMaxIdleConns(10)
+	sqlDB.SetMaxOpenConns(100)
+	sqlDB.SetConnMaxIdleTime(time.Hour)
 	return
 }
