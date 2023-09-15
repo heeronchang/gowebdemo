@@ -11,6 +11,14 @@
       "mode": "auto",
       "program": "${workspaceFolder}/cmd/app_one/main.go",
       "cwd": "${workspaceFolder}/"
+    },
+    {
+      "name": "gorm_gen_test",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${workspaceFolder}/cmd/gen_test/main.go",
+      "cwd": "${workspaceFolder}/"
     }
   ]
 }
