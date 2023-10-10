@@ -9,7 +9,7 @@ import (
 )
 
 func Connect() (db *gorm.DB, err error) {
-	dsn := "root:123456@tcp(127.0.0.1)/test_gorm?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:123456@tcp(127.0.0.1:3308)/go_web_gorm?charset=utf8mb4&parseTime=True&loc=Local"
 	conf := &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	}
